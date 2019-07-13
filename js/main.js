@@ -8,6 +8,6 @@ document.getElementById("calcy").addEventListener("click", function lottery() {
     <hr>
     <p><em>This calculation was made by taking the "4% rule of investment" into consideration, which means you will never run out of money if you were to spend the amounts above while keeping the rest of the jackpot in a S&P 500 index fund.</em></p>
 
-    <p><em>This calculation only makes sense in US & Canada since the inflation numbers play a big role in the final results. Your mileage may vary if you live in another country.</em></p>`;
+    <p><em>This calculation only makes sense in the US & Canada since the inflation numbers play a big role in the final results. Your mileage may vary if you live in another country.</em></p>`;
   });
   
