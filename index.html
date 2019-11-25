@@ -3,18 +3,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900&display=swap" rel="stylesheet">
     <title>Lottery Jackpot Calculator</title>
 </head>
 <body>
     <h1>Lottery Jackpot Investment Return Calculator</h1>
     <p>Do not use "." or "," while entering the amount. <em>(e.g. 1000 instead of 1.000 or 1,000)</em></p>
-    <input type="text" value= "Enter the jackpot amount" id="lotteryAmount">
+    <input type="text" placeholder= "Enter the jackpot amount" id="lotteryAmount" class="lottery-A">
     <button id="calcy">Calculate!</button>
-
-    <hr>
 
     <div id="finalText">
     </div>
+    <script src="js/cleave.min.js"></script>
+    <script src="js/accounting.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
-<script src="js/main.js"></script>
 </html>
