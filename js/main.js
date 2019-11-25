@@ -1,11 +1,22 @@
+//puts commas into the number that entered into the input box
 var cleave = new Cleave('.lottery-A', {
   numeral: true,
   numeralThousandsGroupStyle: 'thousand'
 });
 
+//removes commas from cleave
+function removeCommas(str) {
+  while (str.search(",") >= 0) {
+      str = (str + "").replace(',', '');
+  }
+  return str;
+};
+
+//does everything
 document.getElementById("calcy").addEventListener("click", function lottery() {
     lotteryValue = accounting.formatMoney(document.getElementById("lotteryAmount").value);
-    annual = document.getElementById("lotteryAmount").value * 0.04 ;
+    let lotteryAmount = removeCommas(document.getElementById("lotteryAmount").value)
+    annual =  lotteryAmount * 0.04 ;
     annualResult = accounting.formatMoney(annual);
     monthly = annual / 12 ;
     monthlyResult = accounting.formatMoney(monthly);
@@ -21,4 +32,3 @@ document.getElementById("calcy").addEventListener("click", function lottery() {
 
       <p><em>This calculation only makes sense in the US & Canada since the inflation numbers play a big role in the final results. Your mileage may vary if you live in another country.</em></p>`;
   });
-  
