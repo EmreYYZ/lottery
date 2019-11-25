@@ -12,6 +12,15 @@ function removeCommas(str) {
   return str;
 };
 
+//press enter to submit
+var input = document.getElementById("lotteryAmount");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+  document.getElementById("calcy").click();
+  }
+});
+
+
 //does everything
 document.getElementById("calcy").addEventListener("click", function lottery() {
     lotteryValue = accounting.formatMoney(document.getElementById("lotteryAmount").value);
