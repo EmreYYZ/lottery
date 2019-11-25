@@ -5,7 +5,7 @@ body {
     font-style: normal;
     margin: auto;
     margin-top: 40px;
-    width: 40%;
+    width: 50%;
 }
 
 h1 {
@@ -21,10 +21,25 @@ li {
 a {
     color: #85bb65;
 }
-button, input {
+
+button {
     font-family: 'Nunito', sans-serif;
-    font-weight: 400; 
+    font-weight: 400;   
+}
+
+input {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
 }
 .bold {
     font-weight: 700;
+}
+.interact {
+    text-align: center;
+}
+.footer {
+color: gray;
+font-size: 0.9rem;
+margin-top: 4rem;
+text-align: center;
 }
