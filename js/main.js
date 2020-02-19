@@ -6,32 +6,38 @@ var cleave = new Cleave('.lottery-A', {
 
 //removes commas from cleave
 function removeCommas(str) {
-  while (str.search(",") >= 0) {
-      str = (str + "").replace(',', '');
+  while (str.search(',') >= 0) {
+    str = (str + '').replace(',', '');
   }
   return str;
-};
+}
 
 //press enter to submit
-var input = document.getElementById("lotteryAmount");
-input.addEventListener("keyup", function(event) {
+var input = document.getElementById('lotteryAmount');
+input.addEventListener('keyup', function(event) {
   if (event.keyCode === 13) {
-  document.getElementById("calcy").click();
+    document.getElementById('calcy').click();
   }
 });
 
-
 //does everything
-document.getElementById("calcy").addEventListener("click", function lottery() {
-    lotteryValue = accounting.formatMoney(document.getElementById("lotteryAmount").value);
-    let lotteryAmount = removeCommas(document.getElementById("lotteryAmount").value)
-    annual =  lotteryAmount * 0.04 ;
-    annualResult = accounting.formatMoney(annual);
-    monthly = annual / 12 ;
-    monthlyResult = accounting.formatMoney(monthly);
+document.getElementById('calcy').addEventListener('click', function lottery() {
+  lotteryValue = accounting.formatMoney(
+    document.getElementById('lotteryAmount').value
+  );
+  let lotteryAmount = removeCommas(
+    document.getElementById('lotteryAmount').value
+  );
+  annual = lotteryAmount * 0.04;
+  ogAnnual = lotteryAmount * 0.07;
+  annualResult = accounting.formatMoney(annual);
+  ogAnnualResult = accounting.formatMoney(ogAnnual);
+  monthly = annual / 12;
+  ogMonthly = ogAnnual / 12;
+  monthlyResult = accounting.formatMoney(monthly);
+  ogMonthlyResult = accounting.formatMoney(ogMonthly);
 
-    document.getElementById("finalText").innerHTML = 
-      `
+  document.getElementById('finalText').innerHTML = `
       <hr>
       <p>If you were to win a <b> ${lotteryValue} jackpot</b>, you would have:</p>
       <p><b>An annual income of</b> ${annualResult}</p>
@@ -39,5 +45,7 @@ document.getElementById("calcy").addEventListener("click", function lottery() {
       <hr>
       <p><em>This calculation was made by taking the <a href="https://www.investopedia.com/terms/f/four-percent-rule.asp" target="_blank">4% rule of investment</a> into consideration, which means you will never run out of money if you were to spend the amounts above while keeping the rest of the jackpot in a S&P 500 index fund.</em></p>
 
-      <p><em>This calculation only makes sense in the US & Canada since the inflation numbers play a big role in the final results. Your mileage may vary if you live in another country.</em></p>`;
-  });
+      <p><em>This calculation only makes sense in the US & Canada since the inflation numbers play a big role in the final results. Your mileage may vary if you live in another country.</em></p>
+
+      <p><em>If you don't act smart and withdraw all the annual return, you would get <b>${ogAnnualResult}</b> annually and <b>${ogMonthlyResult}</b> monthly.</em></p>`;
+});
